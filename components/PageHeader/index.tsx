@@ -13,7 +13,7 @@ export default function PageHeader({ title }: { title: string }) {
               <a className={styles.logoImageWrapper}>
                 <Image
                   src="/images/logo_tabbied_v3.svg"
-                  alt="Tabbied"
+                  alt="Artwork"
                   layout="fixed"
                   width={52}
                   height={52}
