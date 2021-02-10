@@ -1,0 +1,37 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.footerSection {
+  font-size: 0.95rem;
+  padding: 5rem 0 10rem 0;
+
+  h5 {
+    color: $gray-dark;
+  }
+
+  p {
+    margin-top: 1.5rem;
+  }
+
+  a {
+    color: $gray-dark;
+
+    &:hover {
+      color: $pink;
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .footerSection {
+    padding: 1rem 0 2.5rem 0;
+
+    h5 {
+      margin-top: 2rem;
+    }
+
+    p {
+      margin-top: 0.5rem;
+    }
+  }
+}

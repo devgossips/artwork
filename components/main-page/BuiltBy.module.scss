@@ -1,0 +1,49 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.builtBySection {
+  padding: 120px 0;
+  color: $gray;
+  background-color: $gray-dark;
+
+  .subheading {
+    color: $gray;
+  }
+
+  h3 {
+    color: $gray-light;
+    font-weight: 300;
+    margin-top: 1rem;
+  }
+
+  p {
+    margin-top: 2rem;
+    line-height: 1.8;
+
+    a {
+      color: white;
+
+      &:hover {
+        color: $pink;
+      }
+    }
+  }
+
+  .people {
+    margin-top: 2rem;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .builtBySection {
+    padding: 40px 0;
+
+    .textContent {
+      margin-top: 40px;
+    }
+
+    .imageWrapper {
+      margin-top: 40px;
+    }
+  }
+}

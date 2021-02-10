@@ -1,0 +1,66 @@
+@use 'sass:color';
+@import 'styles/mixins';
+@import 'styles/variables';
+
+.header {
+  padding: 1.5rem 0;
+  font-size: 1.1rem;
+
+  h1 {
+    color: $gray-dark;
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+}
+
+.btn {
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 300;
+  color: white;
+  background-color: $gray-dark;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  height: 2.75rem;
+  border-radius: 0.15rem;
+  cursor: pointer;
+  outline: none;
+
+  .reactIcon {
+    margin-right: 0.4rem;
+    font-size: 1.1rem;
+  }
+
+  @include media-breakpoint-down(sm) {
+    font-size: 0.95rem;
+
+    .label {
+      display: none;
+    }
+
+    .reactIcon {
+      margin-right: 0;
+    }
+  }
+
+  &:hover {
+    background-color: color.scale($gray-dark, $lightness: 6%);
+    box-shadow: 0 0 0.75rem rgba($gray-dark, 20%);
+  }
+
+  &.btnExport {
+    color: white;
+    background-color: $red-high-contrast;
+    margin-left: 0.6rem;
+
+    &:hover {
+      background-color: color.scale($red-high-contrast, $lightness: 6%);
+      box-shadow: 0 0 0.75rem rgba($red-high-contrast, 20%);
+    }
+  }
+}

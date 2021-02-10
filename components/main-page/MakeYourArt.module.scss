@@ -1,0 +1,60 @@
+@use 'sass:color';
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.makeYourArtSection {
+  text-align: center;
+  position: relative;
+  background: $gray-dark;
+  padding-bottom: 120px;
+
+  .messageWrapper {
+    border-top: 1px solid $gray-medium;
+    padding: 120px 0 48px 0;
+    display: flex;
+    justify-content: center;
+
+    p.message {
+      color: $gray-light;
+      font-size: 2.33rem;
+      line-height: 1.4;
+      font-weight: 300;
+      max-width: 640px;
+    }
+  }
+
+  .actionBtn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    border-radius: 0.2rem;
+    color: white;
+    background-color: #ed005f;
+
+    &:hover {
+      box-shadow: 0 0 1rem rgba(black, 0.6);
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .makeYourArtSection {
+    padding-bottom: 64px;
+
+    .darkBackground {
+      margin: 0;
+    }
+
+    .messageWrapper {
+      border-top: 1px solid $gray-medium;
+      padding: 48px 24px 40px 24px;
+      display: flex;
+      justify-content: center;
+
+      p.message {
+        color: $gray-light;
+        font-size: 1.4rem;
+        max-width: 640px;
+      }
+    }
+  }
+}

@@ -1,0 +1,119 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.howItWorksSection {
+  padding: 7rem 0 3rem 0;
+
+  h3 {
+    text-align: center;
+    font-weight: 300;
+  }
+
+  .steps {
+    margin-top: 2.5rem;
+  }
+
+  .stepBox {
+    text-align: center;
+    padding: 1.25rem 2rem;
+
+    .stepNumber {
+      color: #121212;
+      font-size: 1.2rem;
+      display: inline-flex;
+      width: 3rem;
+      height: 3rem;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+
+      &.one {
+        position: relative;
+        overflow: hidden;
+        z-index: 0;
+
+        &::before {
+          content: '';
+          width: 5rem;
+          height: 5rem;
+          background-color: #fca5b8;
+          -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+          position: absolute;
+          top: 12px;
+          left: -45px;
+          z-index: -1;
+        }
+      }
+
+      &.two {
+        background-color: #8beff1;
+      }
+
+      &.three {
+        border-radius: 24px;
+        background-color: #9effd8;
+      }
+    }
+
+    .highlight {
+      position: relative;
+      display: inline-block;
+      white-space: nowrap;
+
+      .text {
+        position: relative;
+        z-index: 1;
+      }
+
+      &::before {
+        content: '';
+        width: 100%;
+        height: 0.5rem;
+        position: absolute;
+        bottom: 3px;
+        left: 0;
+        z-index: 0;
+        background-color: #9effd8;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: 3rem 0;
+
+    .steps {
+      margin-top: 2rem;
+    }
+
+    .stepBox {
+      text-align: center;
+      padding: 1.25rem 2.5rem;
+    }
+  }
+}
+
+.imageBackground {
+  margin: 4rem auto 0 auto;
+  background-image: url('/images/tabbied_screens.jpg');
+  background-repeat: no-repeat;
+  background-size: 1320px auto;
+  height: 640px;
+  background-position: center;
+
+  @include media-breakpoint-down(md) {
+    background-size: 1100px auto;
+    height: 534px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    background-image: url('/images/tabbied_screens_mobile.jpg');
+    background-size: 100% auto;
+    height: 720px;
+  }
+
+  @include media-breakpoint-down(xs) {
+    margin-top: 0;
+    height: 360px;
+  }
+}

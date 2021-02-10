@@ -1,0 +1,19 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.headerSection {
+  padding: 1rem 0;
+  font-size: 1.1rem;
+
+  h2 {
+    color: $gray-dark;
+  }
+
+  @include media-breakpoint-down(sm) {
+    .logoImageWrapper {
+      img {
+        width: 2.5rem;
+      }
+    }
+  }
+}

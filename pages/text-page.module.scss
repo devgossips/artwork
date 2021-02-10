@@ -1,0 +1,41 @@
+@import 'styles/variables';
+
+.textPageWrapper {
+  background: $gray-ultra-light;
+  padding: 6rem 0;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $gray-dark;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2.6rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+    margin-top: 4rem;
+  }
+
+  h4 {
+    font-size: 1.6rem;
+  }
+
+  p {
+    margin-top: 2rem;
+  }
+
+  span.lastUpdated {
+    color: $gray;
+    display: inline-block;
+  }
+}

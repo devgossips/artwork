@@ -1,0 +1,30 @@
+{
+  "name": "Blossom",
+  "slug": "blossom",
+  "description": "Isosceles right triangles are randomly placed to balance stability with a bit of mystery and interest.",
+  "palette": ["#FFFFFF", "#3EECFF", "#FFA1C6", "#3FFFB2", "#ECFF3D", "#FF3D8B"],
+  "options": [
+    {
+      "id": "grid",
+      "displayName": "Columns and rows",
+      "type": "ButtonSelectGroup",
+      "default": "2x3",
+      "options": ["2x3", "4x6", "6x9", "8x12", "10x15"],
+      "replace": "${grid}"
+    },
+    {
+      "id": "frequency",
+      "displayName": "Frequency",
+      "type": "Slider",
+      "default": 1,
+      "min": 0.2,
+      "max": 1,
+      "step": 0.2,
+      "replace": "${shapeFrequency}"
+    }
+  ],
+  "code": {
+    "style": "/* Random color generator variable */ --randomColor: @p(var(--color1), var(--color2), var(--color3), var(--color4), var(--color5)); --rule: ( /* global styles */ overflow:hidden; :before { content:''; @size:100%; position:absolute; } /*Frequency options of 0.2, 0.4, 0.6, 0.8, 1.0 */ @random(${shapeFrequency}) { @random { border-radius: 0px 0px 100% 100%; background: linear-gradient(90deg, var(--randomColor) 50%, var(--randomColor) 50%); :before { top:-50%; left:0; background-color: var(--color0); @shape: hypocycloid 4; -webkit-transition: ease 400ms; transition: ease 400ms; } } @random { border-radius:100% 100% 0 0; background: linear-gradient(90deg, var(--randomColor) 50%, var(--randomColor) 50%); :before { top:50%; left:0; background-color:var(--color0); @shape: hypocycloid 4; -webkit-transition: ease 400ms; transition: ease 400ms; } } @random { background:none; -webkit-clip-path: @pick(circle(50% at 50% 50%), polygon(0 0, 100% 0, 100% 100%, 0% 100%)); clip-path: @pick(circle(50% at 50% 50%), polygon(0 0, 100% 0, 100% 100%, 0% 100%)); transform:rotate(@pick(0, 90deg, 180deg)); -webkit-transition: ease 400ms; transition: ease 400ms; :before { background: linear-gradient(90deg, var(--randomColor) 50%, var(--randomColor) 50%); top:0; left:0; } } } );",
+    "doodle": ":doodle { @grid: ${grid}; @size: ${width} ${height}; overflow:hidden; text-align:center; box-sizing:border-box } :container { background: var(--color0); overflow:hidden; }"
+  }
+}

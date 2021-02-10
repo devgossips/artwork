@@ -1,0 +1,25 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+@import 'styles/gallery-card';
+
+.browseArtworkSection {
+  text-align: center;
+  padding: 2.5rem 0 7.5rem 0;
+
+  h3 {
+    font-weight: 300;
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+  }
+
+  .subheading {
+    display: block;
+    margin-bottom: 1rem;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .browseArtworkSection {
+    margin: 0;
+  }
+}

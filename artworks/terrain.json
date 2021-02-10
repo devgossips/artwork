@@ -1,0 +1,29 @@
+{
+  "name": "Terrain",
+  "slug": "terrain",
+  "palette": ["#FFFFFF", "#CED3D9", "#FF3D8B", "#3FFFB2", "#275AA6", "#3EECFF"],
+  "options": [
+    {
+      "id": "grid",
+      "displayName": "Columns and rows",
+      "type": "ButtonSelectGroup",
+      "default": "4x6",
+      "options": ["2x3", "4x6", "6x9", "8x12", "10x15"],
+      "replace": "${grid}"
+    },
+    {
+      "id": "frequency",
+      "displayName": "Frequency",
+      "type": "Slider",
+      "default": 0.6,
+      "min": 0.2,
+      "max": 1,
+      "step": 0.2,
+      "replace": "${shapeFrequency}"
+    }
+  ],
+  "code": {
+    "style": "/* set custom colors and inject z-index for the specific color to use for association */ --randomColor: @p(var(--color2), var(--color3), var(--color4), var(--color5)); --rule: ( /*Frequency options of 0.2, 0.4, 0.6, 0.8, 1.0 */ @random(${shapeFrequency}) { :after { content: ''; background: var(--randomColor); @size: calc(@rand(8px, 32px) * 6 / @size-col); -webkit-clip-path: @pick(polygon(50% 0%, 0% 100%, 100% 100%), circle(50% at 50% 50%), polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)); clip-path: @pick(polygon(50% 0%, 0% 100%, 100% 100%), circle(50% at 50% 50%), polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)); -webkit-transform:rotate(@pick(0deg, 360deg)); transform:rotate(@pick(0deg, 360deg)); -webkit-transition: transform ease 400ms; transition: transform ease 400ms; } } /*Frequency options of 0.2, 0.4, 0.6, 0.8, 1.0 */ @random(${shapeFrequency}) { -webkit-box-shadow:0 -1px 0 var(--color1); box-shadow:0 -1px 0 var(--color1); } /*Frequency options of 0.2, 0.4, 0.6, 0.8, 1.0 */ @random(${shapeFrequency}) { -webkit-box-shadow:-1px 0 0 var(--color1); box-shadow:-1px 0 0 var(--color1); } );",
+    "doodle": ":doodle { @grid: ${grid}; @size: ${width} ${height}; overflow:hidden; text-align:center; box-sizing:border-box } :container { background: var(--color0); overflow:hidden; }"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "Odessa",
+  "slug": "odessa",
+  "palette": ["#FFFFFF", "#3FFFB2", "#D89FFF", "#D89FFF", "#FF3D8B"],
+  "options": [
+    {
+      "id": "grid",
+      "displayName": "Columns and rows",
+      "type": "ButtonSelectGroup",
+      "default": "4x6",
+      "options": ["2x3", "4x6", "6x9", "8x12", "10x15"],
+      "replace": "${grid}"
+    },
+    {
+      "id": "frequency",
+      "displayName": "Frequency",
+      "type": "Slider",
+      "default": 0.4,
+      "min": 0.2,
+      "max": 1,
+      "step": 0.2,
+      "replace": "${shapeFrequency}"
+    },
+    {
+      "id": "shadow",
+      "displayName": "Shadow",
+      "type": "ToggleSwitch",
+      "default": false,
+      "code": "-webkit-box-shadow:0 0 @pick(0, 40)px rgba(0,0,0,0.2); box-shadow:0 0 @pick(0, 40)px rgba(0,0,0,0.2);",
+      "replace": "${shadow}"
+    }
+  ],
+  "code": {
+    "style": "--randomColor: @p(var(--color0), var(--color1), var(--color2), var(--color3), var(--color4)); --rule: ( /* Frequency options of 0.2, 0.4, 0.6, 0.8, 1.0 */ @random(${shapeFrequency}) { background: var(--randomColor); width:100%; height:@pick(100%, 200%, 300%); border-radius: 200px 200px 200px 200px; /* On or off option for displaying box shadows */ ${shadow} } -webkit-transition: height ease 400ms; transition: height ease 400ms; );",
+    "doodle": ":doodle { @grid: ${grid}; @size: ${width} ${height}; overflow:hidden; text-align:center; box-sizing:border-box } :container { background: var(--color0); }"
+  }
+}

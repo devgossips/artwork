@@ -1,0 +1,101 @@
+@import './variables';
+@import './mixins';
+
+.colors .pickr {
+  display: inline-block;
+  margin-right: 24px;
+  margin-bottom: 10px;
+  @include media-breakpoint-down(sm) {
+    margin-right: 20px;
+  }
+  padding: 2px;
+}
+
+.pcr-picker {
+  /* fix to make the picker show up on safari */
+  z-index: 99999;
+}
+
+.colors > div:last-child .pickr {
+  margin-right: 0;
+}
+
+.colors .pickr .pcr-button::before {
+  display: none;
+}
+
+.colors .pickr .pcr-button::after {
+  border-radius: 2px;
+  box-shadow: none;
+}
+
+.colors .pickr .pcr-button {
+  border-radius: 2px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  width: 30px;
+  height: 30px;
+}
+
+.colors .pickr .pcr-button:hover,
+.colors .pickr .pcr-button:focus {
+  border-radius: 2px;
+  transform: scale(1.1, 1.1);
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.pcr-app[data-theme='monolith'] {
+  border-radius: 2px;
+  position: fixed;
+}
+
+.pcr-app[data-theme='monolith'] .pcr-interaction input,
+.pcr-app[data-theme='monolith'] .pcr-interaction .pcr-result {
+  border-radius: 2px;
+}
+
+.pcr-app[data-theme='monolith']
+  .pcr-selection
+  .pcr-color-preview
+  .pcr-current-color {
+  border-radius: 0 1px 1px 0;
+}
+
+.pcr-app[data-theme='monolith']
+  .pcr-selection
+  .pcr-color-preview
+  .pcr-last-color {
+  border-radius: 1px 0 0 1px;
+}
+
+.pcr-app[data-theme='monolith'] .pcr-selection .pcr-color-palette .pcr-palette {
+  border-radius: 1px;
+}
+
+.pcr-app[data-theme='monolith']
+  .pcr-selection
+  .pcr-color-palette
+  .pcr-palette::before {
+  border-radius: 1px;
+}
+
+.pcr-app[data-theme='monolith'] .pcr-interaction .pcr-save {
+  background: #333;
+}
+
+.pcr-app[data-theme='monolith'] .pcr-interaction .pcr-save:hover {
+  background: #121212;
+}
+
+.pcr-app[data-theme='monolith'] .pcr-interaction input {
+  border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+  line-height: 30px;
+  height: 30px;
+  padding: 0 8px 0 8px;
+  box-sizing: border-box;
+}
+
+.pcr-app[data-theme='monolith'] .pcr-interaction input:hover,
+.pcr-app[data-theme='monolith'] .pcr-interaction input:focus {
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2) !important;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.6);
+}

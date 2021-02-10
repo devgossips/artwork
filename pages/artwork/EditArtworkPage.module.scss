@@ -1,0 +1,85 @@
+@import 'styles/mixins';
+@import 'styles/variables';
+
+.pageWrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vw;
+  height: 100vh;
+  overflow: hidden;
+
+  @include media-breakpoint-down(sm) {
+    height: auto;
+  }
+}
+
+.editArtworkSection {
+  flex-grow: 1;
+  display: flex;
+
+  @include media-breakpoint-down(sm) {
+    display: block;
+  }
+
+  .previewWrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include media-breakpoint-down(sm) {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+  }
+
+  .optionsWrapper {
+    flex: 1;
+    background-color: $gray-ultra-light;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .options {
+      width: 100%;
+      padding: 4rem;
+
+      @include media-breakpoint-down(sm) {
+        padding: 1rem 1.5rem;
+      }
+    }
+
+    .optionBox {
+      margin-bottom: 2rem;
+
+      h3 {
+        margin-bottom: 0.5rem;
+      }
+
+      &:last-child {
+        margin-bottom: none;
+      }
+
+      @include media-breakpoint-down(sm) {
+        margin-bottom: 1.5rem;
+
+        h3 {
+          margin-bottom: 0.2rem;
+        }
+      }
+    }
+  }
+}
+
+.valueSliderWrapper {
+  max-width: 25rem;
+}
+
+.doodleFrame {
+  display: inline-block;
+  box-shadow: 16px 16px 32px 0 rgba(0, 0, 0, 0.1);
+
+  @include media-breakpoint-down(sm) {
+    box-shadow: none;
+  }
+}

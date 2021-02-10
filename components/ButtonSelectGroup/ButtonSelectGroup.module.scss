@@ -1,0 +1,46 @@
+@use 'sass:color';
+@import 'styles/mixins';
+@import 'styles/variables';
+
+.buttonSelectGroup {
+  .option {
+    cursor: pointer;
+    display: inline-flex;
+    color: color.scale($gray-medium, $lightness: 20%);
+    background-color: #ffffff;
+    width: 4.8rem;
+    height: 3.2rem;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid transparent;
+    border-radius: 2px;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
+    box-shadow: 0 1px 0 0 $gray-light;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      box-shadow: 0 1px 0 0 $gray;
+    }
+
+    &.selected {
+      color: $gray-dark;
+      border-color: $gray-dark;
+      box-shadow: none;
+    }
+
+    @include media-breakpoint-down(sm) {
+      width: 30%;
+      margin-right: 5%;
+      margin-top: 0.5rem;
+
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "Symmetry",
+  "slug": "symmetry",
+  "palette": ["#97F4FF", "#97F4FF", "#00FFF3", "#00A1FF", "#FF8DFF", "#FF007E"],
+  "options": [
+    {
+      "id": "circularity",
+      "displayName": "Circularity",
+      "type": "Slider",
+      "default": 0.6,
+      "min": 0.2,
+      "max": 1,
+      "step": 0.2,
+      "replace": "${circularity}"
+    }
+  ],
+  "code": {
+    "style": "--rule: ( @nth(1,2,3,4,5,6) { width: @calc(70 - @i() * 10)%; height:@calc(23.33 - @i() * 3.33)%; position:absolute; top: @calc(26.66 + @i() * 3.33)%; left:20%; border-top-left-radius: 320px; border-top-right-radius: 320px; background-image: linear-gradient(45deg, var(--color2), var(--color3)); overflow:hidden; /* 0.2 could be 0.2, 0.4, 0.6, 0.8, 1.0 */ transform: scaleX(@pick(@rand(-${circularity}, -1), @rand(${circularity}, 1))); -webkit-transition: ease 400ms; transition: ease 400ms; z-index: @i(); } @nth(7,8,9,10,11,12) { width: @calc(70 - (@i() - 6) * 10)%; height:@calc(23.33 - (@i() - 6) * 3.33)%; position:absolute; top: 50%; left: @calc(10 + (@i() - 6) * 10)%; border-bottom-left-radius: 320px; border-bottom-right-radius: 320px; background-image: linear-gradient(45deg, var(--color4), var(--color5)); overflow:hidden; /* 0.2 could be 0.2, 0.4, 0.6, 0.8, 1.0 */ -webkit-transform: scaleX(@pick(@rand(-${circularity}, -1), @rand(${circularity}, 1))); transform: scaleX(@pick(@rand(-0.2, -1), @rand(${circularity}, 1))); -webkit-transition: ease 400ms; transition: ease 400ms; z-index: @i(); } /* Background */ @nth(13) { position:absolute; background: linear-gradient(0deg, var(--color1) 50%, var(--color0) 50%); width:300%; left:-100%; top:-50%; height:200%; } );",
+    "doodle": ":doodle { @grid: 1x13; @size: ${width} ${height}; overflow:hidden; overflow:hidden; text-align:center; box-sizing:border-box } :container { background: var(--color0); overflow:hidden; }"
+  }
+}
