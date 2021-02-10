@@ -9,7 +9,7 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <>
       <Head>
-        <title>Tabbied</title>
+        <title>Artwork</title>
 
         <link
           rel="apple-touch-icon"
