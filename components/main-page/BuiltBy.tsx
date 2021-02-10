@@ -20,7 +20,7 @@ export default function BuiltBy() {
             <div className={styles.imageWrapper}>
               <Image
                 src="/images/built_by_people.png"
-                alt="Built by Sy Hong and Ye Joo Park"
+                alt="Built by Sagnik"
                 width={688}
                 height={661}
               />
@@ -46,7 +46,7 @@ export default function BuiltBy() {
             <div className={styles.textContent}>
               <p>
                 We aim to build simple design tools that energize your
-                creativity. Tabbied was initially developed as a tool for making
+                creativity. Artwork was initially developed as a tool for making
                 wall art, but we quickly realized that it could be used for many
                 other purposes. We’re very excited to see what you can make
                 using out platform.
@@ -63,8 +63,8 @@ export default function BuiltBy() {
 
               <p className={styles.people}>
                 <span className={styles.names}>
-                  <a href="https://www.syunghong.com/">Sy</a> &amp;{' '}
-                  <a href="https://www.behance.net/yejoopark">Park</a>
+                  <a href="https://github.com/devgossips/">Sagnik</a>
+             
                 </span>
               </p>
             </div>
