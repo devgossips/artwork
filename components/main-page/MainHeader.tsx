@@ -79,7 +79,7 @@ export default function MainHeader() {
                 <a className={styles.logoImageWrapper}>
                   <Image
                     src="/images/logo_tabbied_v3.svg"
-                    alt="Tabbied"
+                    alt="Artwork"
                     layout="fixed"
                     width={52}
                     height={52}
@@ -97,7 +97,7 @@ export default function MainHeader() {
             <Col md={3} xs={8}>
               <div className="align-right">
                 <a
-                  href="https://www.producthunt.com/posts/tabbied?utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-tabbied"
+                  href="#"
                   style={{
                     background:
                       'url("https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=279660&theme=light&period=daily") no-repeat center center',
